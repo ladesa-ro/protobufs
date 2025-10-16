@@ -33,7 +33,7 @@ message AvailabilityDto {
 
 message AvailabilityCompoundDto {
   AvailabilityTypeDto type = 1;
-  repeated AvailabilityDto regras = 2;
+  repeated AvailabilityDto rules = 2;
 }
 
 message AvailabilityUnavailableWeekDayDto {
@@ -61,8 +61,8 @@ message AvailabilityUnavailableSpecificDateDto {
 
 message AvailabilityUnavailableDateRangeDto {
   AvailabilityTypeDto type = 1;
-  string date_inicio = 2; // date
-  string date_fim = 3;    // date
+  string date_start = 2; // date
+  string date_end = 3;    // date
   TimeSlotDto slot = 4;
 }
 

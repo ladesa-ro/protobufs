@@ -9,10 +9,13 @@ import "value-objects/time-slot-dto.proto";
 
 message GeneratorPayloadDto {
   string request_id = 1; // guid
+
   string date_start = 2; // date-time
   string date_end = 3;   // date-time
+
   repeated DiaryDto diarys = 4;
   repeated TeacherDto teachers = 5;
   repeated GroupDto groups = 6;
+
   repeated TimeSlotDto time_slots = 7;
 }

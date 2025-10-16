@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Ladesa.TimetableGenerator.v1;
 
-message DisciplinaDto {
+message SubjectDto {
   string id = 1;
-  string nome = 2;
+  string name = 2;
 }

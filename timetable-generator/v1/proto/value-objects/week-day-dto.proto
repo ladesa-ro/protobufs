@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Ladesa.TimetableGenerator.v1;
 
-enum DiaDaSemanaDto {
+enum WeekDayDto {
   Sunday = 0;
   Monday = 1;
   Tuesday = 2;

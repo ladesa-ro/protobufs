@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "value-objects/time-slot-dto.proto";
+
+message GeneratedTimetableLessonDto {
+  string date = 1; // date-time
+  string diary_id = 2;
+  string teacher_id = 3;
+  string group_id = 4;
+  TimeSlotDto time_slot = 5;
+}
+
+message GeneratedTimetableDto {
+  string request_id = 1;
+  string date_start = 2;
+  string date_end = 3;
+  repeated TimeSlotDto time_slots = 4;
+  repeated GeneratedTimetableLessonDto schedules = 5;
+  int32 score = 6;
+}

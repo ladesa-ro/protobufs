@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "value-objects/availability-dto.proto";
+
+message GroupDto {
+  string id = 1;
+  AvailabilityDto availability = 2;
+}

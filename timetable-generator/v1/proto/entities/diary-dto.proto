@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+message DiaryDto {
+  string id = 1;
+  string subject_id = 2;
+  string teacher_id = 3;
+  string group_id = 4;
+  int32 week_limit = 5;
+  int32 remaining = 6;
+}

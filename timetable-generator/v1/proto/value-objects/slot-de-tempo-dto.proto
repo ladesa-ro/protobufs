@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+message SlotDeTempoDto {
+  string inicio = 1;
+  string fim = 2;
+}

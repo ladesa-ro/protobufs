@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "value-objects/dia-da-semana-dto.proto";
+import "value-objects/slot-de-tempo-dto.proto";
+
+enum RegraDisponibilidadeTipoDto {
+  Composta = 0;
+  IndisponivelDiaDaSemana = 1;
+  IndisponivelDiasDaSemana = 2;
+  IndisponivelHorario = 3;
+  IndisponivelDataEspecifica = 4;
+  IndisponivelPeriodoDatas = 5;
+  IndisponivelDiaDoMes = 6;
+  IndisponivelMesesDoAno = 7;
+}
+
+message RegraDisponibilidadeDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+
+  oneof regra {
+    RegraDisponibilidadeCompostaDto Composta = 2;
+    RegraIndisponibilidadeDiaDaSemanaDto indisponivel_dia_da_semana = 3;
+    RegraIndisponibilidadeDiasDaSemanaDto indisponivel_dias_da_semana = 4;
+    RegraIndisponibilidadeHorarioDto indisponivel_horario = 5;
+    RegraIndisponibilidadeDataEspecificaDto indisponivel_data_especifica = 6;
+    RegraIndisponibilidadePeriodoDatasDto indisponivel_periodo_datas = 7;
+    RegraIndisponibilidadeDiaDoMesDto indisponivel_dia_do_mes = 8;
+    RegraIndisponibilidadeMesesDoAnoDto indisponivel_meses_do_ano = 9;
+  }
+}
+
+message RegraDisponibilidadeCompostaDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  repeated RegraDisponibilidadeDto regras = 2;
+}
+
+message RegraIndisponibilidadeDiaDaSemanaDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  Ladesa.TimetableGenerator.v1.DiaDaSemanaDto dia_da_semana = 2;
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 3;
+}
+
+message RegraIndisponibilidadeDiasDaSemanaDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  repeated Ladesa.TimetableGenerator.v1.DiaDaSemanaDto dias_da_semana = 2;
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 3;
+}
+
+message RegraIndisponibilidadeHorarioDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 2;
+}
+
+message RegraIndisponibilidadeDataEspecificaDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  string data = 2; // date
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 3;
+}
+
+message RegraIndisponibilidadePeriodoDatasDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  string data_inicio = 2; // date
+  string data_fim = 3;    // date
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 4;
+}
+
+message RegraIndisponibilidadeDiaDoMesDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  int32 dia_do_mes = 2;
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 3;
+}
+
+message RegraIndisponibilidadeMesesDoAnoDto {
+  RegraDisponibilidadeTipoDto tipo = 1;
+  repeated int32 meses = 2;
+  Ladesa.TimetableGenerator.v1.SlotDeTempoDto slot = 3;
+}

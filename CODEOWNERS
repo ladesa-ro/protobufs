@@ -1,0 +1,4 @@
+.gitignore @ladesa-ro/security
+.github @ladesa-ro/security
+**/*.sh @ladesa-ro/security
+CODEOWNERS @ladesa-ro/security

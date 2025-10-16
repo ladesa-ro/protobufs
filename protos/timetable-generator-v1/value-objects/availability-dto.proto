@@ -19,7 +19,7 @@ enum AvailabilityTypeDto {
 message AvailabilityDto {
   AvailabilityTypeDto type = 1;
 
-  oneof regra {
+  oneof rule {
     AvailabilityCompoundDto compount = 2;
     AvailabilityUnavailableWeekDayDto unavailable_week_day = 3;
     AvailabilityUnavailableWeekDaysDto unavailable_week_days = 4;

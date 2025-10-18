@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package ladesa.timetable_generator.v1.vos;
-option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protos";
+option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protobuf";
 
 message TimeSlot {
   string start = 1;

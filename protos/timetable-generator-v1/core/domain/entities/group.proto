@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 package ladesa.timetable_generator.v1.entities;
-option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protos";
+option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protobuf";
 
 import "core/domain/value_objects/availability_rule.proto";
 

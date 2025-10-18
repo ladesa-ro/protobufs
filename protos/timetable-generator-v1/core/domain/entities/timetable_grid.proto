@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-package Ladesa.TimetableGenerator.v1;
+package ladesa.timetable_generator.v1.entities;
+option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protos";
 
 import "core/domain/value_objects/time_slot.proto";
 import "core/domain/entities/timetable_grid_schedule.proto";

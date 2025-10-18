@@ -6,6 +6,7 @@ option csharp_namespace = "Ladesa.TimetableGenerator.v1.Protos";
 import "core/domain/entities/diary.proto";
 import "core/domain/entities/teacher.proto";
 import "core/domain/entities/group.proto";
+import "core/domain/entities/timetable_grid.proto";
 import "core/domain/value_objects/time_slot.proto";
 
 message GenerateRequestDto {

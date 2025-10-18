@@ -7,5 +7,5 @@ import "core/domain/value_objects/availability_rule.proto";
 
 message Group {
   string id = 1;
-  AvailabilityRule availability_rule = 2;
+  vos.AvailabilityRule availability_rule = 2;
 }

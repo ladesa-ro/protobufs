@@ -10,5 +10,5 @@ message TimetableGridSchedule {
   string diary_id = 2;
   string teacher_id = 3;
   string group_id = 4;
-  TimeSlotDto time_slot = 5;
+  vos.TimeSlot time_slot = 5;
 }

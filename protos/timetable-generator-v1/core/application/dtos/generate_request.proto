@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/domain/entities/diary.proto";
+import "core/domain/entities/teacher.proto";
+import "core/domain/entities/group.proto";
+import "core/domain/value_objects/time_slot.proto";
+
+message GenerateRequestDto {
+  string date_start = 1; // date-time
+  string date_end = 2;   // date-time
+
+  repeated Group groups = 3;
+  repeated Teacher teachers = 4;
+  repeated Diary diarys = 5;
+
+  repeated TimeSlot time_slots = 6;
+
+  optional TimetableGrid previous_timetable_grid = 7;
+}

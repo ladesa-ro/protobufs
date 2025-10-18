@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/application/dtos/generate_request.proto";
+
+message ServiceGenerateRequestDto {
+  string request_id = 1;
+  GenerateRequestDto generate_request = 2;
+}

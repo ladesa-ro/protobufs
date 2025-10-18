@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/domain/value_objects/time_slot.proto";
+import "core/domain/entities/timetable_grid_schedule.proto";
+
+message TimetableGrid {
+  string date_start = 1;
+  string date_end = 2;
+  repeated TimeSlot time_slots = 3;
+  repeated TimetableGridSchedule schedules = 4;
+}

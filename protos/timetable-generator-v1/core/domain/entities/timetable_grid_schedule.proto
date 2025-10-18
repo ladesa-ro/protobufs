@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/domain/value_objects/time_slot.proto";
+
+message TimetableGridSchedule {
+  string date = 1; // date-time
+  string diary_id = 2;
+  string teacher_id = 3;
+  string group_id = 4;
+  TimeSlotDto time_slot = 5;
+}

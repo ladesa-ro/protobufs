@@ -1,0 +1,79 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/domain/value_objects/week_day.proto";
+import "core/domain/value_objects/time_slot.proto";
+
+enum AvailabilityRuleType {
+  Compound = 0;
+  UnavailableWeekDay = 1;
+  UnavailableWeekDays = 2;
+  UnavailableTimeSlot = 3;
+  UnavailableSpecificDate = 4;
+  UnavailableDateRange = 5;
+  UnavailableMonthDay = 6;
+  UnavaiableYearMonths = 7;
+}
+
+message AvailabilityRule {
+  AvailabilityRuleType type = 1;
+
+  oneof rule {
+    AvailabilityRuleCompound compount = 2;
+    AvailabilityRuleUnavailableWeekDay unavailable_week_day = 3;
+    AvailabilityRuleUnavailableWeekDays unavailable_week_days = 4;
+    AvailabilityRuleUnavailableTimeSlot unavailable_time_slot = 5;
+    AvailabilityRuleUnavailableSpecificDate unavailable_specific_date = 6;
+    AvailabilityRuleUnavailableDateRange unavailable_date_range = 7;
+    AvailabilityRuleUnavailableMonthDay unavailable_month_day = 8;
+    AvailabilityRuleUnavailableYearMonths unavailable_year_months = 9;
+  }
+}
+
+message AvailabilityRuleCompound {
+  AvailabilityRuleType type = 1;
+  repeated AvailabilityRule rules = 2;
+}
+
+message AvailabilityRuleUnavailableWeekDay {
+  AvailabilityRuleType type = 1;
+  WeekDay week_day = 2;
+  TimeSlot slot = 3;
+}
+
+message AvailabilityRuleUnavailableWeekDays {
+  AvailabilityRuleType type = 1;
+  repeated WeekDay week_days = 2;
+  TimeSlot slot = 3;
+}
+
+message AvailabilityRuleUnavailableTimeSlot {
+  AvailabilityRuleType type = 1;
+  TimeSlot slot = 2;
+}
+
+message AvailabilityRuleUnavailableSpecificDate {
+  AvailabilityRuleType type = 1;
+  string date = 2; // date
+  TimeSlot slot = 3;
+}
+
+message AvailabilityRuleUnavailableDateRange {
+  AvailabilityRuleType type = 1;
+  string date_start = 2; // date
+  string date_end = 3;    // date
+  TimeSlot slot = 4;
+}
+
+message AvailabilityRuleUnavailableMonthDay {
+  AvailabilityRuleType type = 1;
+  int32 month_day = 2;
+  TimeSlot slot = 3;
+}
+
+message AvailabilityRuleUnavailableYearMonths {
+  AvailabilityRuleType type = 1;
+  repeated int32 months = 2;
+  TimeSlot slot = 3;
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package Ladesa.TimetableGenerator.v1;
+
+import "core/domain/entities/timetable_grid.proto";
+
+message GeneratedTimetable {
+  TimetableGrid timetable = 1;
+  int32 score = 2;
+}

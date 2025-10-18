@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package Ladesa.TimetableGenerator.v1;
 
-message TimeSlotDto {
+message TimeSlot {
   string start = 1;
   string end = 2;
 }

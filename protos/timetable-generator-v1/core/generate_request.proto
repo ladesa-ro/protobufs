@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package ladesa.timetable_generator.v1.core;
+option csharp_namespace = "Ladesa.TimetableGenerator.v1.Core.Protobuf";
+
+import "core/diary.proto";
+import "core/teacher.proto";
+import "core/group.proto";
+import "core/timetable_grid.proto";
+import "core/time_slot.proto";
+
+message GenerateRequest {
+  string date_start = 1; // date-time
+  string date_end = 2;   // date-time
+
+  repeated Group groups = 3;
+  repeated Teacher teachers = 4;
+  repeated Diary diarys = 5;
+
+  repeated TimeSlot time_slots = 6;
+
+  optional TimetableGrid previous_timetable_grid = 7;
+}

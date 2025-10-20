@@ -7,5 +7,5 @@ import "core/availability.proto";
 
 message Group {
   string id = 1;
-  AvailabilityRule availability = 2;
+  Availability availability = 2;
 }
